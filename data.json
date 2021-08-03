@@ -1,33 +1,31 @@
 {
 	"Prout" : [],
-	
 	"D&D characters" : [
 		{
 			"portrait_img": "<lien de l'image>",
-			
 			"info": [
 				{
 					"label": "nom",
-					"value": "Buniboi",
+					"value": "Buniboi"
 				},
 				{
 					"label": "gender",
-					"value": "male",
+					"value": "male"
 				},
 				{
 					"label": "age",
-					"value": "22",
+					"value": "22"
 				}
 			],
 			
 			"gallery": [
 				"<lien image 1>",
-				"<lien image 2>",
+				"<lien image 2>"
 			],
 			
 			"lore": [
 				"<paragraphe 1>",
-				"<paragraphe 2>",
+				"<paragraphe 2>"
 			],
 			
 			"trivia": {
@@ -40,14 +38,14 @@
 						{
 							"left_label": "<texte à gauche de l'axe>",
 							"right_label": "<texte à droite de l'axe>",
-							"value": "<ratio où positionner le curseur>",
+							"value": "<ratio où positionner le curseur>"
 						},
 						{
 							"left_label": "<texte à gauche de l'axe>",
 							"right_label": "<texte à droite de l'axe>",
-							"value": "<ratio où positionner le curseur>",
-						},
-					],
+							"value": "<ratio où positionner le curseur>"
+						}
+					]
 				},
 				
 				"gauges": {
@@ -57,13 +55,13 @@
 					"lines": [
 						{
 							"label": "<label de la jauge>",
-							"value": "<valeur de la jauge>",
+							"value": "<valeur de la jauge>"
 						},
 						{
 							"label": "<label de la jauge>",
-							"value": "<valeur de la jauge>",
-						},
-					],
+							"value": "<valeur de la jauge>"
+						}
+					]
 				},
 				
 				"relationships": {
@@ -73,7 +71,7 @@
 						"03": "neutral",
 						"04": "dislike",
 						"05": "hate",
-						"06": "???",
+						"06": "???"
 					},
 					
 					"lines": [
@@ -85,12 +83,12 @@
 							
 							"text": [
 								"<paragraphe 1>",
-								"<paragraphe 2>",
-							],
-						},
-					],
-				},
-			},
-		},
-	],
+								"<paragraphe 2>"
+							]
+						}
+					]
+				}
+			}
+		}
+	]
 }
