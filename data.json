@@ -3,15 +3,18 @@
 	"D&D characters" : [
 		{
 			"portrait_img": "<lien de l'image>",
+			
 			"info": [
 				{
 					"label": "nom",
 					"value": "Buniboi"
 				},
+				
 				{
 					"label": "gender",
 					"value": "male"
 				},
+				
 				{
 					"label": "age",
 					"value": "22"
@@ -40,6 +43,7 @@
 							"right_label": "<texte à droite de l'axe>",
 							"value": "<ratio où positionner le curseur>"
 						},
+						
 						{
 							"left_label": "<texte à gauche de l'axe>",
 							"right_label": "<texte à droite de l'axe>",
@@ -57,6 +61,7 @@
 							"label": "<label de la jauge>",
 							"value": "<valeur de la jauge>"
 						},
+						
 						{
 							"label": "<label de la jauge>",
 							"value": "<valeur de la jauge>"
