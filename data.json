@@ -2,12 +2,12 @@
 	"Prout" : [],
 	"D&D characters" : [
 		{
-			"portrait_img": "<lien de l'image>",
+			"portrait_img": "https://kqom.carrd.co/assets/images/gallery03/20507cf4_original.jpg",
 			
 			"info": [
 				{
 					"label": "nom",
-					"value": "Buniboi"
+					"value": "Maxim Sadovsky"
 				},
 				
 				{
@@ -17,18 +17,22 @@
 				
 				{
 					"label": "age",
-					"value": "22"
+					"value": "27"
+				}
+				{
+					"label": "RP",
+					"value": "Kiki & compagnie"
 				}
 			],
 			
 			"gallery": [
-				"<lien image 1>",
-				"<lien image 2>"
+				"https://kqom.carrd.co/assets/images/gallery03/ac30a0d4_original.jpg",
+				"https://kqom.carrd.co/assets/images/gallery03/d2beea9e_original.jpg"
 			],
 			
 			"lore": [
-				"<paragraphe 1>",
-				"<paragraphe 2>"
+				"il était une fois un poti vampire qui s'occupe de son poti frère.",
+				"heureusement pour lui, il rencontre un labrador du nom de Macks qui est plutôt gentil."
 			],
 			
 			"trivia": {
@@ -39,15 +43,40 @@
 					
 					"lines": [
 						{
-							"left_label": "<texte à gauche de l'axe>",
-							"right_label": "<texte à droite de l'axe>",
-							"value": "<ratio où positionner le curseur>"
+							"left_label": "little spoon",
+							"right_label": "big spoon",
+							"value": "0,8"
+						},
+						{
+							"left_label": "screams about the bugs",
+							"right_label": "squashes them",
+							"value": "0,1"
 						},
 						
 						{
-							"left_label": "<texte à gauche de l'axe>",
-							"right_label": "<texte à droite de l'axe>",
-							"value": "<ratio où positionner le curseur>"
+							"left_label": "lends clothes",
+							"right_label": "borrows clothes",
+							"value": "0,7"
+						}
+						{
+							"left_label": "affection through words",
+							"right_label": "affection through actions",
+							"value": "0,6"
+						}
+				{
+							"left_label": "dislikes PDA",
+							"right_label": "loves PDA",
+							"value": "0,9"
+						}
+			{
+							"left_label": "overprotective",
+							"right_label": "chill going",
+							"value": "0,4"
+						}
+		{
+							"left_label": "doesn't use pet names",
+							"right_label": "use pet names",
+							"value": "0,1"
 						}
 					]
 				},
@@ -58,13 +87,17 @@
 					
 					"lines": [
 						{
-							"label": "<label de la jauge>",
-							"value": "<valeur de la jauge>"
+							"label": "curious",
+							"value": "0,5"
 						},
 						
 						{
-							"label": "<label de la jauge>",
-							"value": "<valeur de la jauge>"
+							"label": "introverted",
+							"value": "0,8"
+						}
+						{
+							"label": "assertive",
+							"value": "0,4"
 						}
 					]
 				},
@@ -82,13 +115,13 @@
 					"lines": [
 						{
 							"icon": "<icone du personnage>",
-							"name": "<nom du personnage>",
+							"name": "Macks ???",
 							
-							"feelings": "03",
+							"feelings": "01",
 							
 							"text": [
-								"<paragraphe 1>",
-								"<paragraphe 2>"
+								"On dirait un labrador, c'est mignon.",
+								"Il est mignon tout court."
 							]
 						}
 					]
