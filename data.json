@@ -18,11 +18,11 @@
 				{
 					"label": "age",
 					"value": "27"
-				}
+				},
 				{
 					"label": "height",
 					"value": "173"
-				}
+				},
 				{
 					"label": "RP",
 					"value": "Kiki & compagnie"
@@ -61,23 +61,23 @@
 							"left_label": "lends clothes",
 							"right_label": "borrows clothes",
 							"value": "0,7"
-						}
+						},
 						{
 							"left_label": "affection through words",
 							"right_label": "affection through actions",
 							"value": "0,6"
-						}
-				{
+						},
+						{
 							"left_label": "dislikes PDA",
 							"right_label": "loves PDA",
 							"value": "0,9"
-						}
-			{
+						},
+						{
 							"left_label": "overprotective",
 							"right_label": "chill going",
 							"value": "0,4"
-						}
-		{
+						},
+						{
 							"left_label": "doesn't use pet names",
 							"right_label": "use pet names",
 							"value": "0,1"
@@ -98,7 +98,7 @@
 						{
 							"label": "introverted",
 							"value": "0,8"
-						}
+						},
 						{
 							"label": "assertive",
 							"value": "0,4"
