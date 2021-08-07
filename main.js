@@ -1,5 +1,11 @@
 var dataUrl = "https://raw.githubusercontent.com/Nahyn/Carrd_character_sheet/master/data.json";
 
+addEventTypes(window, [
+	"DATA_ERROR",
+	"DATA_SUCCESS",
+	"DATA_COMPLETE",
+]);
+
 function getData(dataFileURL_) {
 	$.ajax({
 		"url": dataFileURL_,
@@ -10,11 +16,11 @@ function getData(dataFileURL_) {
 		
 		"success": function(data_) {
 			callEvent(window.EventTypes.DATA_SUCCESS, data_)
-		}
+		},
 		
 		"error": function() {
 			callEvent(window.EventTypes.DATA_ERROR)
-		}
+		},
 		
 		"complete": function() {
 			callEvent(window.EventTypes.DATA_COMPLETE)
@@ -22,10 +28,10 @@ function getData(dataFileURL_) {
 	})
 }
 
-getData(dataUrl)
+window.addEventListener(window.EventTypes.DATA_SUCCESS, function(event_){
+	console.log(event_.detail)
+});
 
-addEventTypes(window, [
-	"DATA_ERROR",
-	"DATA_SUCCESS",
-	"DATA_COMPLETE",
-])
+window.addEventListener("load", function(){
+	getData(dataUrl);
+})
