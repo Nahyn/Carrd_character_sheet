@@ -1,6 +1,6 @@
 {
 	"Prout" : [],
-	"D&D characters" : [
+	"Kiki & compagnie" : [
 		{
 			"portrait_img": "https://kqom.carrd.co/assets/images/gallery03/20507cf4_original.jpg",
 			
@@ -126,6 +126,152 @@
 							"text": [
 								"On dirait un labrador, c'est mignon.",
 								"Il est mignon tout court."
+							]
+						}
+					]
+				}
+			}
+		},
+		{
+			"portrait_img": "https://pbs.twimg.com/media/EnNQNirXYAYmyBx?format=jpg",
+			
+			"info": [
+				{
+					"label": "nom",
+					"value": "Youri ???"
+				},
+				
+				{
+					"label": "gender",
+					"value": "male"
+				},
+				
+				{
+					"label": "age",
+					"value": "33"
+				},
+				{
+					"label": "height",
+					"value": "172"
+				},
+				{
+					"label": "RP",
+					"value": "Kiki & compagnie"
+				}
+			],
+			
+			"gallery": [
+				"https://kqom.carrd.co/assets/images/gallery01/4222fc67_original.jpg",
+				"https://kqom.carrd.co/assets/images/gallery03/e9eebe38_original.jpg"
+			],
+			
+			"lore": [
+				"Another baby vampiiiiiiire!",
+				"But more baby."
+			],
+			
+			"trivia": {
+				
+				"axis": {
+					"axis_img": "<image de l'axe>",
+					"cursor_img": "<image du curseur>",
+					
+					"lines": [
+						{
+							"left_label": "little spoon",
+							"right_label": "big spoon",
+							"value": "0,2"
+						},
+						{
+							"left_label": "screams about the bugs",
+							"right_label": "squashes them",
+							"value": "0,8"
+						},
+						
+						{
+							"left_label": "lends clothes",
+							"right_label": "borrows clothes",
+							"value": "0,8"
+						},
+						{
+							"left_label": "affection through words",
+							"right_label": "affection through actions",
+							"value": "0,5"
+						},
+						{
+							"left_label": "dislikes PDA",
+							"right_label": "loves PDA",
+							"value": "0,8"
+						},
+						{
+							"left_label": "overprotective",
+							"right_label": "chill going",
+							"value": "0,2"
+						},
+						{
+							"left_label": "doesn't use pet names",
+							"right_label": "use pet names",
+							"value": "0,8"
+						},
+						{
+							"left_label": "what's a car",
+							"right_label": "drives the car",
+							"value": "0,4"
+						}
+					]
+				},
+				
+				"gauges": {
+					"background_img": "<fond de la jauge>",
+					"foreground_img": "<remplissage de la jauge>",
+					
+					"lines": [
+						{
+							"label": "curious",
+							"value": "0,9"
+						},
+						
+						{
+							"label": "introverted",
+							"value": "0,2"
+						},
+						{
+							"label": "assertive",
+							"value": "0,4"
+						}
+					]
+				},
+				
+				"relationships": {
+					"feelings_list": {
+						"01": "love",
+						"02": "like",
+						"03": "neutral",
+						"04": "dislike",
+						"05": "hate",
+						"06": "???"
+					},
+					
+					"lines": [
+						{
+							"icon": "<icone du personnage>",
+							"name": "Maxim Sadovsky",
+							
+							"feelings": "02",
+							
+							"text": [
+								"He's like me!",
+								"And he's nice!!"
+							]
+						},
+						{
+							"icon": "<icone du personnage>",
+							"name": "Kirill Pokrovski",
+							
+							"feelings": "01",
+							
+							"text": [
+								"♥♥"
 							]
 						}
 					]
