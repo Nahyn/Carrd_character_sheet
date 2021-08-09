@@ -47,6 +47,43 @@ function getData(dataFileURL_) {
 	})
 }
 
+var createPictureContainer = function createPictureContainer(imgSrc_){
+	var tmpContainer = $("<div>")
+		.addClass("img-container")
+	;
+	
+	var horizonalAlignContainer = $("<div>")
+		.addClass("img-horizontal-align")
+	;
+	
+	var verticalAlignContainer = $("<div>")
+		.addClass("img-vertical-align")
+	;
+	
+	var tmpImg = $("<img>")
+		.attr("src", imgSrc_)
+	;
+	
+	tmpContainer.append(verticalAlignContainer)
+	verticalAlignContainer.append(horizonalAlignContainer)
+	horizonalAlignContainer.append(tmpImg)
+	
+	return tmpContainer;
+}
+
+// lineFunction_ must return an element with .row > .col
+var createListElement = function createListElement(infoArray_, lineFunction_) {
+	var tmpContainer = $("<div>")
+		.addClass("container-fluid")
+	;
+	
+	infoArray_.forEach(function(infoLine_) {
+		tmpContainer.append(lineFunction_(infoLine_))
+	})
+	
+	return tmpContainer;
+}
+
 function clearSheetInfo() {
 	$("#" + INFO_ELEMENT_IDS.INFO_PICTURE + " img").attr("src", null)
 	$("#" + INFO_ELEMENT_IDS.INFO_LINE_WRAPPER).html("")
@@ -65,7 +102,29 @@ function clearSheetInfo() {
 function updateSheetInfo() {
 	console.log(currentSheet)
 	
-	$("#" + INFO_ELEMENT_IDS.INFO_PICTURE + " img").attr("src", currentSheet.portrait_img)
+	$("#" + INFO_ELEMENT_IDS.INFO_PICTURE + " img").attr("src", currentSheet.portrait_img);
+	
+	var infoContainer = createListElement(currentSheet.info, function(infoLine_){
+		var rowContainer = $("<div>")
+			.addClass("row")
+		;
+		
+		var tmpLabel = $("<div>")
+			.addClass("col-2")
+			.html(infoLine_.label)
+			.appendTo(rowContainer)
+		;
+		
+		var tmpValue = $("<div>")
+			.addClass("col-10")
+			.html(infoLine_.value)
+			.appendTo(rowContainer)
+		;
+		
+		return rowContainer;
+	});
+	
+	$("#" + INFO_ELEMENT_IDS.INFO_LINE_WRAPPER).append(infoContainer)
 }
 
 var characterSelectId = "character_sheet_selector"
@@ -127,48 +186,13 @@ function createCharacterSelection(data_) {
 	
 	return selectorElement;
 }
+	
 
 function initializeSheetElements(mainContainer_) {
-	var createPictureContainer = function createPictureContainer(imgSrc_){
-		var tmpContainer = $("<div>")
-			.addClass("img-container")
-		;
-		
-		var horizonalAlignContainer = $("<div>")
-			.addClass("img-horizontal-align")
-		;
-		
-		var verticalAlignContainer = $("<div>")
-			.addClass("img-vertical-align")
-		;
-		
-		var tmpImg = $("<img>")
-			.attr("src", imgSrc_)
-		;
-		
-		tmpContainer.append(horizonalAlignContainer)
-		horizonalAlignContainer.append(verticalAlignContainer)
-		verticalAlignContainer.append(tmpImg)
-		
-		return tmpContainer;
-	}
-	
-	// lineFunction_ must return an element with .row > .col
-	var createInfoArrayElement = function createInfoArrayElement(infoArray_, lineFunction_) {
-		var tmpContainer = $("<div>")
-			.addClass("container-fluid")
-		;
-		
-		infoArray_.forEach(function(infoLine_) {
-			tmpContainer.append(lineFunction_(infoLine_))
-		})
-		
-		return tmpContainer;
-	}
-	
 	/*	Create info block ====================================================================== */
 	var createInfoBlock = function createInfoBlock(){
 		var tmpContainer = $("<div>")
+			.attr("id", "info-block")
 			.addClass("row")
 		;
 		
@@ -177,7 +201,7 @@ function initializeSheetElements(mainContainer_) {
 			.attr("id", INFO_ELEMENT_IDS.INFO_PICTURE)
 		;
 		
-		var linesContainer = createInfoArrayElement(
+		var linesContainer = createListElement(
 				[], 
 				function(infoLine_){
 					var lineContainer = $("<div>")
@@ -209,6 +233,7 @@ function initializeSheetElements(mainContainer_) {
 	}
 	var createTabsBlock = function createTabsBlock() {
 		var tmpContainer = $("<div>")
+			.attr("id", "tab-block")
 			.addClass("row")
 		;
 		
@@ -290,6 +315,7 @@ function initializeSheetElements(mainContainer_) {
 	}
 	
 	var tabContentContainer = $("<div>")
+		.attr("id", "info-block")
 		.addClass("tab-content")
 	;
 	
@@ -298,6 +324,8 @@ function initializeSheetElements(mainContainer_) {
 		.append(createTabContentElement(tabsIds.LORE).append(createLoreBlock()))
 		.append(createTabContentElement(tabsIds.GALLERY).append(createGalleryBlock()))
 	;
+	
+	var tabContentBlock = 
 	
 	/*	ASSEMBLE THE SHEET ===================================================================== */
 	mainContainer_.append(createInfoBlock())
