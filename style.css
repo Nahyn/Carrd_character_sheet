@@ -1,0 +1,19 @@
+.img-horizontal-align,
+.img-horizontal-align {
+	display: flex;
+	flex: 1 1 2em;
+	justify-content: center;
+	align-item: center;
+}
+
+.img-horizontal-align {
+	flex-direction: row;
+}
+
+.img-vertical-align {
+	flex-direction: column;
+}
+
+.img-vertical-align img {
+	flex: 1 1 0em;
+}

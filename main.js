@@ -65,7 +65,7 @@ function clearSheetInfo() {
 function updateSheetInfo() {
 	console.log(currentSheet)
 	
-	$("#" + INFO_ELEMENT_IDS.INFO_PICTURE, " img").attr("src", currentSheet.portrait_img)
+	$("#" + INFO_ELEMENT_IDS.INFO_PICTURE + " img").attr("src", currentSheet.portrait_img)
 }
 
 var characterSelectId = "character_sheet_selector"
