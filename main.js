@@ -62,6 +62,10 @@ function clearSheetInfo() {
 	$("#" + INFO_ELEMENT_IDS.GALLERY_CONTAINER).html("")
 }
 
+function updateSheetInfo() {
+	console.log(currentSheet)
+}
+
 var characterSelectId = "character_sheet_selector"
 function createCharacterSelection(data_) {
 	var selectorElement = $("<select>");
@@ -83,9 +87,15 @@ function createCharacterSelection(data_) {
 	}
 	
 	selectorElement.on("change", function(event_){
-		callEvent(window.EventTypes.CHANGE_SHEET)
-		currentSheet = getSheet(selectorElement.val());
-		callEvent(window.EventTypes.SHEET_CHANGED)
+		var newSheet = getSheet(selectorElement.val())
+		
+		callEvent(window.EventTypes.CHANGE_SHEET, window, newSheet)
+		
+		console.log(selectorElement.val());
+		console.log(newSheet);
+		
+		currentSheet = newSheet;
+		callEvent(window.EventTypes.SHEET_CHANGED, window, newSheet)
 	})
 	
 	Object.keys(data_).forEach(function(groupId_){
@@ -300,7 +310,7 @@ function initializeSheetElements(mainContainer_) {
 window.addEventListener(window.EventTypes.DATA_SUCCESS, function(event_){
 	var data = event_.detail;
 	
-	var mainContainer = $($("#main > .inner")[0]);
+	var mainContainer = $($("body")[0]);
 	var characterSelectorElement = createCharacterSelection(data)
 	$("#" + characterSelectId, mainContainer).remove()
 	mainContainer.append(characterSelectorElement)
