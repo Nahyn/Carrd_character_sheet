@@ -72,16 +72,8 @@ var createPictureContainer = function createPictureContainer(imgSrc_){
 }
 
 // lineFunction_ must return an element with .row > .col
-var createListElement = function createListElement(infoArray_, lineFunction_) {
-	var tmpContainer = $("<div>")
-		.addClass("container-fluid")
-	;
-	
-	infoArray_.forEach(function(infoLine_) {
-		tmpContainer.append(lineFunction_(infoLine_))
-	})
-	
-	return tmpContainer;
+var createListElements = function createListElements(infoArray_, lineFunction_) {
+	return infoArray_.map(lineFunction_);
 }
 
 function clearSheetInfo() {
@@ -104,21 +96,33 @@ function updateSheetInfo() {
 	
 	$("#" + INFO_ELEMENT_IDS.INFO_PICTURE + " img").attr("src", currentSheet.portrait_img);
 	
-	var infoContainer = createListElement(currentSheet.info, function(infoLine_){
+	var infoContainer = createListElements(currentSheet.info, function(infoLine_){
+		var titleParts = [];
+		
+		if(infoLine_.label != undefined) {
+			titleParts.push(infoLine_.label.toUpperCase())
+		}
+		titleParts.push(infoLine_.value)
+		
 		var rowContainer = $("<div>")
 			.addClass("row")
+			.attr("title", titleParts.join(" : "))
 		;
 		
-		var tmpLabel = $("<div>")
-			.addClass("col-2")
+		var tmpContent = $("<div>")
+			.addClass("col-12")
+			.addClass("info-line")
+			.appendTo(rowContainer)
+		;
+		
+		var tmpLabel = $("<span>")
 			.html(infoLine_.label)
-			.appendTo(rowContainer)
+			.appendTo(tmpContent)
 		;
 		
-		var tmpValue = $("<div>")
-			.addClass("col-10")
+		var tmpValue = $("<span>")
 			.html(infoLine_.value)
-			.appendTo(rowContainer)
+			.appendTo(tmpContent)
 		;
 		
 		return rowContainer;
@@ -201,22 +205,9 @@ function initializeSheetElements(mainContainer_) {
 			.attr("id", INFO_ELEMENT_IDS.INFO_PICTURE)
 		;
 		
-		var linesContainer = createListElement(
-				[], 
-				function(infoLine_){
-					var lineContainer = $("<div>")
-						.addClass("row")
-					;
-					
-					return lineContainer;
-				}
-			)
-			.attr("id", INFO_ELEMENT_IDS.INFO_LINE_WRAPPER)
-		;
-		
 		var linesColumn = $("<div>")
 			.addClass("col-md-6")
-			.append(linesContainer)
+			.attr("id", INFO_ELEMENT_IDS.INFO_LINE_WRAPPER)
 		;
 		
 		tmpContainer.append(pictureContainer);
