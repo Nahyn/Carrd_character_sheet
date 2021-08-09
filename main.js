@@ -267,7 +267,7 @@ function initializeSheetElements(mainContainer_) {
 	/*	Create trivia block ==================================================================== */
 	var createTriviaBlock = function createTriviaBlock() {
 		var tmpContainer = $("<div>")
-			.addClass("container-fluid")
+			.addClass("row")
 		;
 		
 		return tmpContainer;
@@ -276,7 +276,7 @@ function initializeSheetElements(mainContainer_) {
 	/*	Create lore block ====================================================================== */
 	var createLoreBlock = function createTriviaBlock() {
 		var tmpContainer = $("<div>")
-			.addClass("container-fluid")
+			.addClass("row")
 		;
 		
 		return tmpContainer;
@@ -286,7 +286,7 @@ function initializeSheetElements(mainContainer_) {
 	/*	Create gallery block =================================================================== */
 	var createGalleryBlock = function createTriviaBlock() {
 		var tmpContainer = $("<div>")
-			.addClass("container-fluid")
+			.addClass("row")
 		;
 		
 		return tmpContainer;
@@ -305,18 +305,25 @@ function initializeSheetElements(mainContainer_) {
 		;
 	}
 	
-	var tabContentContainer = $("<div>")
-		.attr("id", "info-block")
+	var tabContentBlock = $("<div>")
+		.attr("id", "tab-content-container")
 		.addClass("tab-content")
 	;
 	
-	tabContentContainer
+	tabContentBlock
 		.append(createTabContentElement(tabsIds.TRIVIA).append(createTriviaBlock()))
 		.append(createTabContentElement(tabsIds.LORE).append(createLoreBlock()))
 		.append(createTabContentElement(tabsIds.GALLERY).append(createGalleryBlock()))
 	;
 	
-	var tabContentBlock = 
+	var tabContentContainer = $("<div>")
+		.addClass("row")
+		.append(
+			$("<div>")
+				.addClass("col-12")
+				.append(tabContentBlock)
+		)
+	;
 	
 	/*	ASSEMBLE THE SHEET ===================================================================== */
 	mainContainer_.append(createInfoBlock())
