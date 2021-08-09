@@ -85,17 +85,16 @@ function createCharacterSelection(data_) {
 	return selectorElement;
 }
 
-window.addEventListener("load", function(){
-	window.addEventListener(window.EventTypes.DATA_SUCCESS, function(event_){
-		var data = event_.detail;
-		
-		var mainContainer = $($("#main > .inner")[0]);
-		var characterSelectorElement = createCharacterSelection(data)
-		$("#" + characterSelectId, mainContainer).remove()
-		mainContainer.append(characterSelectorElement)
-	});
+
+window.addEventListener(window.EventTypes.DATA_SUCCESS, function(event_){
+	var data = event_.detail;
+	console.log(data)
 	
-	getData(dataUrl);
-})
+	var mainContainer = $($("#main > .inner")[0]);
+	var characterSelectorElement = createCharacterSelection(data)
+	$("#" + characterSelectId, mainContainer).remove()
+	mainContainer.append(characterSelectorElement)
+});
 
 getData(dataUrl);
+
