@@ -64,6 +64,8 @@ function clearSheetInfo() {
 
 function updateSheetInfo() {
 	console.log(currentSheet)
+	
+	$("#" + INFO_ELEMENT_IDS.INFO_PICTURE, " img").attr("src", currentSheet.portrait_img)
 }
 
 var characterSelectId = "character_sheet_selector"
@@ -90,10 +92,6 @@ function createCharacterSelection(data_) {
 		var newSheet = getSheet(selectorElement.val())
 		
 		callEvent(window.EventTypes.CHANGE_SHEET, window, newSheet)
-		
-		console.log(selectorElement.val());
-		console.log(newSheet);
-		
 		currentSheet = newSheet;
 		callEvent(window.EventTypes.SHEET_CHANGED, window, newSheet)
 	})
@@ -176,7 +174,7 @@ function initializeSheetElements(mainContainer_) {
 		
 		var pictureContainer = createPictureContainer("INFO_PICTURE.PNG")
 			.addClass("col-md-6")
-			.addClass("id", INFO_ELEMENT_IDS.INFO_PICTURE)
+			.attr("id", INFO_ELEMENT_IDS.INFO_PICTURE)
 		;
 		
 		var linesContainer = createInfoArrayElement(
@@ -189,7 +187,7 @@ function initializeSheetElements(mainContainer_) {
 					return lineContainer;
 				}
 			)
-			.addClass("id", INFO_ELEMENT_IDS.INFO_LINE_WRAPPER)
+			.attr("id", INFO_ELEMENT_IDS.INFO_LINE_WRAPPER)
 		;
 		
 		var linesColumn = $("<div>")
@@ -310,7 +308,7 @@ function initializeSheetElements(mainContainer_) {
 window.addEventListener(window.EventTypes.DATA_SUCCESS, function(event_){
 	var data = event_.detail;
 	
-	var mainContainer = $($("body")[0]);
+	var mainContainer = $($("#main > .inner")[0]);
 	var characterSelectorElement = createCharacterSelection(data)
 	$("#" + characterSelectId, mainContainer).remove()
 	mainContainer.append(characterSelectorElement)
