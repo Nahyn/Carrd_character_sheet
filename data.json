@@ -1,5 +1,137 @@
 {
-	"Prout" : [],
+	"Dodo dehors" : [
+	{
+			"portrait_img": "https://pbs.twimg.com/media/Em8CnnaXUAMm5_y?format=jpg",
+			
+			"info": [
+				{
+					"label": "nom",
+					"value": "Morgan"
+				},
+				
+				{
+					"label": "gender",
+					"value": "male"
+				},
+				
+				{
+					"label": "age",
+					"value": "19"
+				},
+				{
+					"label": "height",
+					"value": "182"
+				},
+				{
+					"label": "RP",
+					"value": "Dodo dehors"
+				}
+			],
+			
+			"gallery": [
+				"<lien>",
+				"<lien>"
+			],
+			
+			"lore": [
+				"Big bro who's maybe a bit too angry sometimes.",
+				"Just... a little bit."
+			],
+			
+			"trivia": {
+				
+				"axis": {
+					"axis_img": "https://i51.servimg.com/u/f51/19/07/32/75/21080911.png",
+					"cursor_img": "https://i51.servimg.com/u/f51/19/07/32/75/21080912.png",
+					
+					"lines": [
+						{
+							"left_label": "little spoon",
+							"right_label": "big spoon",
+							"value": "0,9"
+						},
+						{
+							"left_label": "screams about the bugs",
+							"right_label": "squashes them",
+							"value": "0,8"
+						},
+						
+						{
+							"left_label": "lends clothes",
+							"right_label": "borrows clothes",
+							"value": "0,1"
+						},
+						{
+							"left_label": "affection through words",
+							"right_label": "affection through actions",
+							"value": "0,9"
+						},
+						{
+							"left_label": "dislikes PDA",
+							"right_label": "loves PDA",
+							"value": "0,6"
+						},
+						{
+							"left_label": "overprotective",
+							"right_label": "chill going",
+							"value": "0,1"
+						},
+						{
+							"left_label": "doesn't use pet names",
+							"right_label": "use pet names",
+							"value": "0,7"
+						}
+					]
+				},
+				
+				"gauges": {
+					"background_img": "https://i51.servimg.com/u/f51/19/07/32/75/21080913.png",
+					"foreground_img": "https://i51.servimg.com/u/f51/19/07/32/75/21080910.png",
+					
+					"lines": [
+						{
+							"label": "curious",
+							"value": "0,7"
+						},
+						
+						{
+							"label": "introverted",
+							"value": "0,5"
+						},
+						{
+							"label": "assertive",
+							"value": "0,8"
+						}
+					]
+				},
+				
+				"relationships": {
+					"feelings_list": {
+						"01": "love",
+						"02": "like",
+						"03": "neutral",
+						"04": "dislike",
+						"05": "hate",
+						"06": "???"
+					},
+					
+					"lines": [
+						{
+							"icon": "<icone du personnage>",
+							"name": "???",
+							
+							"feelings": "01",
+							
+							"text": [
+								"???",
+								"???"
+							]
+						}
+					]
+				}
+			}
+		}
+	],
 	"Kiki & compagnie" : [
 		{
 			"portrait_img": "https://kqom.carrd.co/assets/images/gallery03/20507cf4_original.jpg",
@@ -42,8 +174,8 @@
 			"trivia": {
 				
 				"axis": {
-					"axis_img": "<image de l'axe>",
-					"cursor_img": "<image du curseur>",
+					"axis_img": "https://i51.servimg.com/u/f51/19/07/32/75/21080911.png",
+					"cursor_img": "https://i51.servimg.com/u/f51/19/07/32/75/21080912.png",
 					
 					"lines": [
 						{
@@ -86,8 +218,8 @@
 				},
 				
 				"gauges": {
-					"background_img": "<fond de la jauge>",
-					"foreground_img": "<remplissage de la jauge>",
+					"background_img": "https://i51.servimg.com/u/f51/19/07/32/75/21080913.png",
+					"foreground_img": "https://i51.servimg.com/u/f51/19/07/32/75/21080910.png",
 					
 					"lines": [
 						{
@@ -173,8 +305,8 @@
 			"trivia": {
 				
 				"axis": {
-					"axis_img": "<image de l'axe>",
-					"cursor_img": "<image du curseur>",
+					"axis_img": "https://i51.servimg.com/u/f51/19/07/32/75/21080911.png",
+					"cursor_img": "https://i51.servimg.com/u/f51/19/07/32/75/21080912.png",
 					
 					"lines": [
 						{
@@ -222,8 +354,8 @@
 				},
 				
 				"gauges": {
-					"background_img": "<fond de la jauge>",
-					"foreground_img": "<remplissage de la jauge>",
+					"background_img": "https://i51.servimg.com/u/f51/19/07/32/75/21080913.png",
+					"foreground_img": "https://i51.servimg.com/u/f51/19/07/32/75/21080910.png",
 					
 					"lines": [
 						{
