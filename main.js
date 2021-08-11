@@ -77,6 +77,9 @@ var createListElements = function createListElements(infoArray_, lineFunction_) 
 }
 
 function clearSheetInfo() {
+	var tmpFirstTab = new bootstrap.Tab($(".nav-link:first-child"))
+	tmpFirstTab.show()
+	
 	$("#" + INFO_ELEMENT_IDS.INFO_PICTURE + " img").attr("src", null)
 	$("#" + INFO_ELEMENT_IDS.INFO_LINE_WRAPPER).html("")
 	
@@ -92,8 +95,6 @@ function clearSheetInfo() {
 }
 
 function updateSheetInfo() {
-	console.log(currentSheet)
-	
 	$("#" + INFO_ELEMENT_IDS.INFO_PICTURE + " img").attr("src", currentSheet.portrait_img);
 	
 	var infoContainer = createListElements(currentSheet.info, function(infoLine_){
