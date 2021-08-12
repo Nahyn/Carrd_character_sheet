@@ -418,7 +418,7 @@
 			}
 		},
 		{
-			"portrait_img": "https://pbs.twimg.com/media/EnNQNirXYAYmyBx?format=jpg",
+			"portrait_img": "<lien>",
 			
 			"info": [
 				{
@@ -561,6 +561,156 @@
 							
 							"text": [
 								"Freakin' dumbass."
+							]
+						}
+					]
+				}
+			}
+		},
+		{
+			"portrait_img": "<lien>",
+			
+			"info": [
+				{
+					"label": "nom",
+					"value": "Nona"
+				},
+				
+				{
+					"label": "gender",
+					"value": "female"
+				},
+				{
+					"label": "species",
+					"value": "vampire"
+				},
+				
+				{
+					"label": "age",
+					"value": "36"
+				},
+				{
+					"label": "height",
+					"value": "167"
+				},
+				{
+					"label": "Status",
+					"value": "Alive"
+				}
+			],
+			
+			"gallery": [
+				"<lien>",
+				"<lien>"
+			],
+			
+			"lore": [
+				"??",
+				"??"
+			],
+			
+			"trivia": {
+				
+				"axis": {
+					"axis_img": "https://i51.servimg.com/u/f51/19/07/32/75/21080911.png",
+					"cursor_img": "https://i51.servimg.com/u/f51/19/07/32/75/21080912.png",
+					
+					"lines": [
+						{
+							"left_label": "little spoon",
+							"right_label": "big spoon",
+							"value": "0,5"
+						},
+						{
+							"left_label": "screams about the bugs",
+							"right_label": "squashes them",
+							"value": "0,5"
+						},
+						
+						{
+							"left_label": "lends clothes",
+							"right_label": "borrows clothes",
+							"value": "0,5"
+						},
+						{
+							"left_label": "affection through words",
+							"right_label": "affection through actions",
+							"value": "0,5"
+						},
+						{
+							"left_label": "dislikes PDA",
+							"right_label": "loves PDA",
+							"value": "0,5"
+						},
+						{
+							"left_label": "overprotective",
+							"right_label": "chill going",
+							"value": "0,5"
+						},
+						{
+							"left_label": "doesn't use pet names",
+							"right_label": "use pet names",
+							"value": "0,8"
+						},
+						{
+							"left_label": "what's a car",
+							"right_label": "drives the car",
+							"value": "0,5"
+						}
+					]
+				},
+				
+				"gauges": {
+					"background_img": "https://i51.servimg.com/u/f51/19/07/32/75/21080913.png",
+					"foreground_img": "https://i51.servimg.com/u/f51/19/07/32/75/21080910.png",
+					
+					"lines": [
+						{
+							"label": "curious",
+							"value": "0,5"
+						},
+						
+						{
+							"label": "introverted",
+							"value": "0,5"
+						},
+						{
+							"label": "assertive",
+							"value": "0,5"
+						}
+					]
+				},
+				
+				"relationships": {
+					"feelings_list": {
+						"01": "love",
+						"02": "like",
+						"03": "neutral",
+						"04": "dislike",
+						"05": "hate",
+						"06": "???"
+					},
+					
+					"lines": [
+						{
+							"icon": "<icone du personnage>",
+							"name": "Luka",
+							
+							"feelings": "02",
+							
+							"text": [
+								"??",
+								"??"
+							]
+						},
+						{
+							"icon": "<icone du personnage>",
+							"name": "Avel",
+							
+							"feelings": "01",
+							
+							"text": [
+								"??"
 							]
 						}
 					]
