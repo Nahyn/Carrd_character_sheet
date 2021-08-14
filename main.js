@@ -77,7 +77,7 @@ function clearSheetInfo() {
 	var tmpFirstTab = new bootstrap.Tab($(".nav-link:first-child"))
 	tmpFirstTab.show()
 	
-	$("#" + INFO_ELEMENT_IDS.INFO_PICTURE + " img").attr("src", null)
+	$("#" + INFO_ELEMENT_IDS.INFO_PICTURE).attr("style", null)
 	$("#" + INFO_ELEMENT_IDS.INFO_LINE_WRAPPER).html("")
 	
 	$("#" + INFO_ELEMENT_IDS.TRIVIA_AXIS_CONTAINER).html("")
@@ -92,7 +92,7 @@ function clearSheetInfo() {
 }
 
 function updateSheetInfo() {
-	$("#" + INFO_ELEMENT_IDS.INFO_PICTURE + " img").attr("src", currentSheet.portrait_img);
+	$("#" + INFO_ELEMENT_IDS.INFO_PICTURE).attr("style", "background: url('" + currentSheet.portrait_img + "')");
 	
 	var infoContainer = createListElements(currentSheet.info, function(infoLine_){
 		var titleParts = [];
