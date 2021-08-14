@@ -23,8 +23,8 @@ var INFO_ELEMENT_IDS = {
 	"GALLERY_CONTAINER": "gallery_container",
 }
 
+var mainContainer;
 var currentSheet = undefined;
-
 function getData(dataFileURL_) {
 	$.ajax({
 		"url": dataFileURL_,
@@ -45,6 +45,18 @@ function getData(dataFileURL_) {
 			callEvent(window.EventTypes.DATA_COMPLETE)
 		}
 	})
+}
+
+
+var sheetIdSeparator = "____"
+var getSheetId = function getSheetId(groupId_, sheetIndex_) {
+	return [groupId_, sheetIndex_].join(sheetIdSeparator);
+}
+
+var getSheet = function getSheet(data_, sheetId_) {
+	var idComponents = sheetId_.split(sheetIdSeparator);
+	
+	return data_[idComponents[0]][idComponents[1]]
 }
 
 var createPictureContainer = function createPictureContainer(imgSrc_){
@@ -175,26 +187,17 @@ function updateSheetInfo() {
 
 var characterSelectId = "character_sheet_selector"
 function createCharacterSelection(data_) {
-	var selectorElement = $("<select>");
+	sheetSelect = $("<select>");
 	
 	var defaultSelected = $("<option>")
 		.attr("selected", true)
 		.attr("disabled", true)
 		.html("Select a character")
-		.appendTo(selectorElement)
+		.appendTo(sheetSelect)
 	;
 	
-	var getSheetId = function getSheetId(groupId_, sheetIndex_) {
-		return groupId_ + "____" + sheetIndex_
-	}
-	
-	var getSheet = function getSheet(sheetId_) {
-		var components = sheetId_.split("____")
-		return data_[components[0]][components[1]]
-	}
-	
-	selectorElement.on("change", function(event_){
-		var newSheet = getSheet(selectorElement.val())
+	sheetSelect.on("change", function(event_){
+		var newSheet = getSheet(data_, sheetSelect.val())
 		
 		callEvent(window.EventTypes.CHANGE_SHEET, window, newSheet)
 		currentSheet = newSheet;
@@ -227,12 +230,11 @@ function createCharacterSelection(data_) {
 				.appendTo(tmpOptGroup)
 		})
 		
-		tmpOptGroup.appendTo(selectorElement)
-	})
+		tmpOptGroup.appendTo(sheetSelect)
+	});
 	
-	return selectorElement;
+	return sheetSelect;
 }
-	
 
 function initializeSheetElements(mainContainer_) {
 	/*	Create info block ====================================================================== */
@@ -393,25 +395,29 @@ function initializeSheetElements(mainContainer_) {
 window.addEventListener(window.EventTypes.DATA_SUCCESS, function(event_){
 	var data = event_.detail;
 	
-	var mainContainer = $($("#main > .inner")[0]);
 	var characterSelectorElement = createCharacterSelection(data)
-	$("#" + characterSelectId, mainContainer).remove()
 	mainContainer.append(characterSelectorElement)
-	
-	initializeSheetElements(mainContainer)
 });
 
-window.addEventListener(window.EventTypes.CHANGE_SHEET, function(event_){
-	clearSheetInfo();
+window.addEventListener(window.EventTypes.CHANGE_SHEET, function(event_) {
+	if (currentSheet == undefined) {
+		mainContainer = $($("#main > .inner")[0]);
+		initializeSheetElements(mainContainer)
+	} else {
+		clearSheetInfo();
+	}
 });
 
-window.addEventListener(window.EventTypes.SHEET_CHANGED, function(event_){
+window.addEventListener(window.EventTypes.SHEET_CHANGED, function(event_) {
 	if (currentSheet != undefined) {
 		updateSheetInfo();
 	}
 });
 
-getData(dataUrl);
+window.addEventListener("load", function(){
+	mainContainer = $($("#main > .inner")[0])
+	getData(dataUrl);
+})
 
 var triggerTabList = [].slice.call(document.querySelectorAll(".nav-tabs .nav-link"))
 triggerTabList.forEach(function (triggerEl) {
