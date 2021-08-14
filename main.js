@@ -62,23 +62,8 @@ var getSheet = function getSheet(data_, sheetId_) {
 var createPictureContainer = function createPictureContainer(imgSrc_){
 	var tmpContainer = $("<div>")
 		.addClass("img-container")
+		.attr("style", "background: url('" + imgSrc_ + "')")
 	;
-	
-	var horizonalAlignContainer = $("<div>")
-		.addClass("img-horizontal-align")
-	;
-	
-	var verticalAlignContainer = $("<div>")
-		.addClass("img-vertical-align")
-	;
-	
-	var tmpImg = $("<img>")
-		.attr("src", imgSrc_)
-	;
-	
-	tmpContainer.append(verticalAlignContainer)
-	verticalAlignContainer.append(horizonalAlignContainer)
-	horizonalAlignContainer.append(tmpImg)
 	
 	return tmpContainer;
 }
@@ -171,7 +156,7 @@ function updateSheetInfo() {
 		
 		var tmpContent = $("<div>")
 			.addClass("col-12")
-			.addClass("lore-line")
+			.addClass("gallery-line")
 			.appendTo(rowContainer)
 		;
 		
@@ -182,7 +167,6 @@ function updateSheetInfo() {
 		return rowContainer;
 	});
 	$("#" + INFO_ELEMENT_IDS.GALLERY_CONTAINER).append(galleryContainer);
-	
 }
 
 var characterSelectId = "character_sheet_selector"
