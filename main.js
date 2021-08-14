@@ -128,8 +128,49 @@ function updateSheetInfo() {
 		
 		return rowContainer;
 	});
+	$("#" + INFO_ELEMENT_IDS.INFO_LINE_WRAPPER).append(infoContainer);
 	
-	$("#" + INFO_ELEMENT_IDS.INFO_LINE_WRAPPER).append(infoContainer)
+	
+	var loreContainer = createListElements(currentSheet.lore, function(loreLine_){
+		var rowContainer = $("<div>")
+			.addClass("row")
+		;
+		
+		var tmpContent = $("<div>")
+			.addClass("col-12")
+			.addClass("lore-line")
+			.appendTo(rowContainer)
+		;
+		
+		var tmpLabel = $("<span>")
+			.html(loreLine_)
+			.appendTo(tmpContent)
+		;
+		
+		return rowContainer;
+	});
+	$("#" + INFO_ELEMENT_IDS.LORE_LINE_CONTAINER).append(loreContainer);
+	
+	
+	var galleryContainer = createListElements(currentSheet.gallery, function(galleryLine_){
+		var rowContainer = $("<div>")
+			.addClass("row")
+		;
+		
+		var tmpContent = $("<div>")
+			.addClass("col-12")
+			.addClass("lore-line")
+			.appendTo(rowContainer)
+		;
+		
+		var tmpImage = createPictureContainer(galleryLine_)
+			.appendTo(tmpContent)
+		;
+		
+		return rowContainer;
+	});
+	$("#" + INFO_ELEMENT_IDS.GALLERY_CONTAINER).append(galleryContainer);
+	
 }
 
 var characterSelectId = "character_sheet_selector"
@@ -271,6 +312,11 @@ function initializeSheetElements(mainContainer_) {
 			.addClass("row")
 		;
 		
+		var tmpContent = $("<div>")
+			.addClass("col-12")
+			.appendTo(tmpContainer)
+		;
+		
 		return tmpContainer;
 	}
 	
@@ -278,6 +324,12 @@ function initializeSheetElements(mainContainer_) {
 	var createLoreBlock = function createTriviaBlock() {
 		var tmpContainer = $("<div>")
 			.addClass("row")
+		;
+		
+		var tmpContent = $("<div>")
+			.addClass("col-12")
+			.attr("id", INFO_ELEMENT_IDS.LORE_LINE_CONTAINER)
+			.appendTo(tmpContainer)
 		;
 		
 		return tmpContainer;
@@ -288,6 +340,12 @@ function initializeSheetElements(mainContainer_) {
 	var createGalleryBlock = function createTriviaBlock() {
 		var tmpContainer = $("<div>")
 			.addClass("row")
+		;
+		
+		var tmpContent = $("<div>")
+			.addClass("col-12")
+			.attr("id", INFO_ELEMENT_IDS.GALLERY_CONTAINER)
+			.appendTo(tmpContainer)
 		;
 		
 		return tmpContainer;
