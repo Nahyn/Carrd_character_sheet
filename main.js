@@ -59,10 +59,12 @@ var getSheet = function getSheet(data_, sheetId_) {
 	return data_[idComponents[0]][idComponents[1]]
 }
 
+var inElementDataUrl = "data-img-url";
 var createPictureContainer = function createPictureContainer(imgSrc_){
 	var tmpContainer = $("<div>")
 		.addClass("img-container")
-		.attr("style", "background: url('" + imgSrc_ + "')")
+		.attr("style", "background-image: url('" + imgSrc_ + "')")
+		.attr(inElementDataUrl, imgSrc_)
 	;
 	
 	return tmpContainer;
@@ -92,7 +94,10 @@ function clearSheetInfo() {
 }
 
 function updateSheetInfo() {
-	$("#" + INFO_ELEMENT_IDS.INFO_PICTURE).attr("style", "background: url('" + currentSheet.portrait_img + "')");
+	$("#" + INFO_ELEMENT_IDS.INFO_PICTURE)
+		.attr("style", "background-image: url('" + currentSheet.portrait_img + "')")
+		.attr(inElementDataUrl, currentSheet.portrait_img)
+	;
 	
 	var infoContainer = createListElements(currentSheet.info, function(infoLine_){
 		var titleParts = [];
@@ -150,23 +155,23 @@ function updateSheetInfo() {
 	
 	
 	var galleryContainer = createListElements(currentSheet.gallery, function(galleryLine_){
-		var rowContainer = $("<div>")
-			.addClass("row")
-		;
-		
 		var tmpContent = $("<div>")
 			.addClass("col-md-6")
 			.addClass("gallery-line")
-			.appendTo(rowContainer)
 		;
 		
 		var tmpImage = createPictureContainer(galleryLine_)
 			.appendTo(tmpContent)
 		;
 		
-		return rowContainer;
+		return tmpContent;
 	});
-	$("#" + INFO_ELEMENT_IDS.GALLERY_CONTAINER).append(galleryContainer);
+	
+	$("#" + INFO_ELEMENT_IDS.GALLERY_CONTAINER).append(
+		$("<div>")
+			.addClass("row")
+			.append(galleryContainer)
+	);
 }
 
 var characterSelectId = "character_sheet_selector"
@@ -398,8 +403,37 @@ window.addEventListener(window.EventTypes.SHEET_CHANGED, function(event_) {
 	}
 });
 
+var imgModal;
+var showImgModal = function(imgSrc_){
+	if(imgModal == undefined) {
+		imgModal = createPictureContainer("")
+			.addClass("img-modal")
+			.appendTo($("body"))
+			.on("click", function(){
+				hideImgModal();
+			})
+		;
+	}
+	
+	imgModal
+		.attr("style", "background-image: url('" + imgSrc_ + "')")
+		.removeClass("hide")
+	;
+}
+
+var hideImgModal = function(){
+	imgModal.addClass("hide");
+}
+
 window.addEventListener("load", function(){
-	mainContainer = $($("#main > .inner")[0])
+	$("body").on("click", ".img-container:not(.img-modal)", function(event_){
+		var currentTarget = $(event_.currentTarget);
+		var imgUrl = currentTarget.attr(inElementDataUrl);
+		
+		showImgModal(imgUrl)
+	})
+	
+	mainContainer = $($("#main > .inner")[0]);
 	getData(dataUrl);
 })
 
