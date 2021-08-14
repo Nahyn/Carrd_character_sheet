@@ -37,7 +37,7 @@
     appearance: auto;
 }
 
-#main > .inner > *:last-child {
+#main > .inner > *:last-child:not(select) {
     overflow: auto;
     flex-basis: 40vh;
 }
@@ -62,6 +62,14 @@
     background-position: center;
 }
 
+.img-container:hover:not(.img-modal) {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.hide {
+	display: none !important;
+}
 
 #info_line_container {
 	display: flex;

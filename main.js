@@ -15,6 +15,8 @@ var INFO_ELEMENT_IDS = {
 	
 	"TRIVIA_AXIS_CONTAINER": "trivia_axis_container",
 	"TRIVIA_GAUGE_CONTAINER": "trivia_gauge_container",
+	
+	"TRIVIA_RELATION_CONTAINER": "trivia_relation_container",
 	"TRIVIA_RELATION_ICON_CONTAINER": "trivia_relation_icon_container",
 	"TRIVIA_RELATION_FEELING_CONTAINER": "trivia_relation_feeling_container",
 	"TRIVIA_RELATION_DESCRIPTION_CONTAINER": "trivia_relation_description_container",
@@ -131,6 +133,123 @@ function updateSheetInfo() {
 		return rowContainer;
 	});
 	$("#" + INFO_ELEMENT_IDS.INFO_LINE_WRAPPER).append(infoContainer);
+	
+	
+	var axisContainer = createListElements(currentSheet.trivia.axis.lines, function(axisLine_){
+		var rowContainer = $("<div>")
+			.addClass("row")
+			.addClass("axis-line")
+		;
+		
+		var leftLabelElement = $("<div>")
+			.addClass("col-3")
+			.append(
+				$("<span>").html(axisLine_.left_label)
+			)
+			.appendTo(rowContainer)
+		;
+		
+		var axisContainer = $("<div>")
+			.addClass("col-6")
+			.appendTo(rowContainer)
+		;
+		
+		var axisBackground = $("<div>")
+			.addClass("axis-background")
+			.attr("style", "background-image: url('"+ currentSheet.trivia.axis.axis_img +"')")
+			.appendTo(axisContainer)
+		;
+		
+		var cursorPositionner = $("<img>")
+			.addClass("axis-cursor-positionner")
+			.attr("style", "left: "+ (parseFloat(axisLine_.value.replace(",", ".")) * 100) +"%")
+			.append(
+				$("<img>")
+					.addClass("axis-cursor")
+					.attr("src", currentSheet.trivia.axis.cursor_img)
+			)
+			.appendTo(axisContainer)
+		;
+		
+		var rightLabelElement = $("<div>")
+			.addClass("col-3")
+			.append(
+				$("<span>").html(axisLine_.right_label)
+			)
+			.appendTo(rowContainer)
+		;
+		
+		return rowContainer;
+	});
+	$("#" + INFO_ELEMENT_IDS.TRIVIA_GAUGE_CONTAINER).append(axisContainer);
+	
+	var gaugesContainer = createListElements(currentSheet.trivia.gauges.lines, function(gaugeLine_){
+		var rowContainer = $("<div>")
+			.addClass("row")
+			.addClass("gauge-line")
+		;
+		
+		var labelElement = $("<div>")
+			.addClass("col-3")
+			.append(
+				$("<span>").html(gaugeLine_.label)
+			)
+			.appendTo(rowContainer)
+		;
+		
+		var gaugeContainer = $("<div>")
+			.addClass("col-9")
+			.appendTo(rowContainer)
+		;
+		
+		var axisBackground = $("<div>")
+			.addClass("gauge-background")
+			.attr("style", "background-image: url('"+ currentSheet.trivia.gauges.background_img +"')")
+			.appendTo(gaugeContainer)
+		;
+		
+		var cursorPositionner = $("<img>")
+			.addClass("gauge-foreground")
+			.attr(
+				"style", 
+				[
+					"background-image: url('"+ currentSheet.trivia.gauges.foreground_img +"')",
+					"width: "+ (parseFloat(gaugeLine_.value.replace(",", ".")) * 100) +"%"
+				].join(";")
+			)
+			.appendTo(gaugeContainer)
+		;
+		
+		return rowContainer;
+	});
+	$("#" + INFO_ELEMENT_IDS.TRIVIA_GAUGE_CONTAINER).append(gaugesContainer);
+	
+	
+	var relationContainer = createListElements(currentSheet.trivia.relationships.lines, function(relationLine_){
+		var rowContainer = $("<div>")
+			.addClass("row")
+		;
+		
+		var tmpContent = $("<div>")
+			.addClass("col-12")
+			.addClass("relationship-line")
+			.appendTo(rowContainer)
+		;
+		
+		var tmpIcon = $("<img>")
+			.attr("src", relationLine_.icon)
+			.appendTo(tmpContent)
+		;
+		
+		var tmpLabel = $("<span>")
+			.html(relationLine_.name)
+			.appendTo(tmpContent)
+		;
+		
+		return rowContainer;
+	});
+	$("#" + INFO_ELEMENT_IDS.TRIVIA_RELATION_CONTAINER).append(relationContainer);
+	
 	
 	
 	var loreContainer = createListElements(currentSheet.lore, function(loreLine_){
@@ -303,9 +422,27 @@ function initializeSheetElements(mainContainer_) {
 			.addClass("row")
 		;
 		
-		var tmpContent = $("<div>")
+		var tmpAxisContainer = $("<div>")
 			.addClass("col-12")
+			.attr("id", INFO_ELEMENT_IDS.TRIVIA_AXIS_CONTAINER)
 			.appendTo(tmpContainer)
+		;
+		
+		var tmpGaugesContainer = $("<div>")
+			.addClass("col-12")
+			.attr("id", INFO_ELEMENT_IDS.TRIVIA_GAUGE_CONTAINER)
+			.appendTo(tmpContainer)
+		;
+		
+		var tmpRelationshipContainer = $("<div>")
+			.addClass("col-12")
+			.attr("id", INFO_ELEMENT_IDS.TRIVIA_RELATION_CONTAINER)
+			.appendTo(tmpContainer)
+		;
+		
+		var tmpRelationshipContent = $("<div>")
+			.addClass("row")
+			.appendTo(tmpRelationshipContainer)
 		;
 		
 		return tmpContainer;
@@ -392,9 +529,8 @@ window.addEventListener(window.EventTypes.CHANGE_SHEET, function(event_) {
 	if (currentSheet == undefined) {
 		mainContainer = $($("#main > .inner")[0]);
 		initializeSheetElements(mainContainer)
-	} else {
-		clearSheetInfo();
 	}
+	clearSheetInfo();
 });
 
 window.addEventListener(window.EventTypes.SHEET_CHANGED, function(event_) {
