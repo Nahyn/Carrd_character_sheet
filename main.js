@@ -155,7 +155,7 @@ function updateSheetInfo() {
 		;
 		
 		var tmpContent = $("<div>")
-			.addClass("col-12")
+			.addClass("col-md-6")
 			.addClass("gallery-line")
 			.appendTo(rowContainer)
 		;
