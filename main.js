@@ -213,30 +213,59 @@ function updateSheetInfo() {
 	$("#" + INFO_ELEMENT_IDS.TRIVIA_GAUGE_CONTAINER).append(gaugesContainer);
 	
 	
-	var relationContainer = createListElements(currentSheet.trivia.relationships.lines, function(relationLine_){
+	var relationContainer = createListElements(currentSheet.trivia.relationships.lines, function(relationLine_, index_){
 		var rowContainer = $("<div>")
 			.addClass("row")
+			.addClass("relationship-line")
 		;
 		
-		var tmpContent = $("<div>")
+		var lineId = "relation_" + index_;
+		
+		var tmpHeader = $("<div>")
 			.addClass("col-12")
-			.addClass("relationship-line")
 			.appendTo(rowContainer)
+		;
+		
+		var headerContent = $("<a>")
+			.attr({
+				"data-bs-toggle" : "collapse",
+				"href" : "#" + lineId,
+			})
+			.appendTo(tmpHeader)
 		;
 		
 		var tmpIcon = $("<img>")
 			.attr("src", relationLine_.icon)
-			.appendTo(tmpContent)
+			.appendTo(headerContent)
 		;
 		
 		var tmpLabel = $("<span>")
 			.html(relationLine_.name)
-			.appendTo(tmpContent)
+			.appendTo(headerContent)
 		;
+		
+		var tmpBody = $("<div>")
+			.addClass("col-12")
+			.addClass("collapse")
+			.attr({
+				"id": lineId,
+			})
+			.appendTo(rowContainer)
+			.append(
+				createListElements(relationLine_.text, function(textLine_){
+					return $("<span>")
+						.addClass("relation-text")
+						.html(textLine_)
+					;
+				})
+			)
+		;
+		
 		
 		return rowContainer;
 	});
 	$("#" + INFO_ELEMENT_IDS.TRIVIA_RELATION_CONTAINER).append(relationContainer);
+	new bootstrap.Collapse($("", "#" + INFO_ELEMENT_IDS.TRIVIA_RELATION_CONTAINER))
 	
 	
 	
