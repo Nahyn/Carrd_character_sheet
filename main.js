@@ -7,6 +7,9 @@ addEventTypes(window, [
 	
 	"CHANGE_SHEET",
 	"SHEET_CHANGED",
+	
+	"IMG_LOADED",
+	"IMG_ERROR"
 ]);
 
 var INFO_ELEMENT_IDS = {
@@ -49,6 +52,15 @@ function getData(dataFileURL_) {
 	})
 }
 
+function loadImg(imgSrc_){
+	var tmpImage = new Image();
+	
+	tmpImage.loadImage = function(){
+		tmpImage.src = imgSrc_;
+	}
+	
+	return tmpImage;
+}
 
 var sheetIdSeparator = "____"
 var getSheetId = function getSheetId(groupId_, sheetIndex_) {
@@ -87,9 +99,7 @@ function clearSheetInfo() {
 	$("#" + INFO_ELEMENT_IDS.TRIVIA_AXIS_CONTAINER).html("")
 	$("#" + INFO_ELEMENT_IDS.TRIVIA_GAUGE_CONTAINER).html("")
 	
-	$("#" + INFO_ELEMENT_IDS.TRIVIA_RELATION_ICON_CONTAINER).html("")
-	$("#" + INFO_ELEMENT_IDS.TRIVIA_RELATION_FEELING_CONTAINER).html("")
-	$("#" + INFO_ELEMENT_IDS.TRIVIA_RELATION_DESCRIPTION_CONTAINER).html("")
+	$("#" + INFO_ELEMENT_IDS.TRIVIA_RELATION_CONTAINER).html("")
 	
 	$("#" + INFO_ELEMENT_IDS.LORE_LINE_CONTAINER).html("")
 	$("#" + INFO_ELEMENT_IDS.GALLERY_CONTAINER).html("")
@@ -144,7 +154,9 @@ function updateSheetInfo() {
 		var leftLabelElement = $("<div>")
 			.addClass("col-3")
 			.append(
-				$("<span>").html(axisLine_.left_label)
+				$("<span>")
+					.attr("title", axisLine_.left_label)
+					.html(axisLine_.left_label)
 			)
 			.appendTo(rowContainer)
 		;
@@ -174,7 +186,9 @@ function updateSheetInfo() {
 		var rightLabelElement = $("<div>")
 			.addClass("col-3")
 			.append(
-				$("<span>").html(axisLine_.right_label)
+				$("<span>")
+					.attr("title", axisLine_.right_label)
+					.html(axisLine_.right_label)
 			)
 			.appendTo(rowContainer)
 		;
@@ -192,7 +206,9 @@ function updateSheetInfo() {
 		var labelElement = $("<div>")
 			.addClass("col-3")
 			.append(
-				$("<span>").html(gaugeLine_.label)
+				$("<span>")
+					.attr("title", gaugeLine_.label)
+					.html(gaugeLine_.label)
 			)
 			.appendTo(rowContainer)
 		;
@@ -212,8 +228,8 @@ function updateSheetInfo() {
 	});
 	$("#" + INFO_ELEMENT_IDS.TRIVIA_GAUGE_CONTAINER).append(gaugesContainer);
 	
-	
-	var relationContainer = createListElements(currentSheet.trivia.relationships.lines, function(relationLine_, index_){
+	var relationshipData = currentSheet.trivia.relationships;
+	var relationContainer = createListElements(relationshipData.lines, function(relationLine_, index_){
 		var rowContainer = $("<div>")
 			.addClass("row")
 			.addClass("relationship-line")
@@ -234,15 +250,33 @@ function updateSheetInfo() {
 			.appendTo(tmpHeader)
 		;
 		
-		var tmpIcon = $("<img>")
-			.attr("src", relationLine_.icon)
-			.appendTo(headerContent)
-		;
+		var tmpIcon = loadImg(relationLine_.icon);
+		
+		tmpIcon.onload = function(event_) {
+			$(tmpIcon).prependTo(headerContent)
+		}
+		tmpIcon.loadImage()
 		
 		var tmpLabel = $("<span>")
 			.html(relationLine_.name)
 			.appendTo(headerContent)
 		;
+		
+		var feelingsContent = relationshipData.feelings_list[relationLine_.feelings];
+		var tmpFeelingIcon = loadImg(feelingsContent);
+		
+		tmpFeelingIcon.onerror = function(event_) {
+			$("<span>")
+				.addClass("relation-feeling")
+				.html(feelingsContent)
+				.appendTo(headerContent)
+		}
+		tmpFeelingIcon.onload = function(event_) {
+			$(tmpFeelingIcon)
+				.addClass("relation-feeling")
+				.appendTo(headerContent)
+		}
+		tmpFeelingIcon.loadImage()
 		
 		var tmpBody = $("<div>")
 			.addClass("col-12")
@@ -265,9 +299,8 @@ function updateSheetInfo() {
 		return rowContainer;
 	});
 	$("#" + INFO_ELEMENT_IDS.TRIVIA_RELATION_CONTAINER).append(relationContainer);
-	new bootstrap.Collapse($("", "#" + INFO_ELEMENT_IDS.TRIVIA_RELATION_CONTAINER))
-	
-	
+	var collapseElements = new bootstrap.Collapse($(".relationship-line", "#" + INFO_ELEMENT_IDS.TRIVIA_RELATION_CONTAINER))
+	console.log(collapseElements)
 	
 	var loreContainer = createListElements(currentSheet.lore, function(loreLine_){
 		var rowContainer = $("<div>")
@@ -455,11 +488,6 @@ function initializeSheetElements(mainContainer_) {
 			.addClass("col-12")
 			.attr("id", INFO_ELEMENT_IDS.TRIVIA_RELATION_CONTAINER)
 			.appendTo(tmpContainer)
-		;
-		
-		var tmpRelationshipContent = $("<div>")
-			.addClass("row")
-			.appendTo(tmpRelationshipContainer)
 		;
 		
 		return tmpContainer;
