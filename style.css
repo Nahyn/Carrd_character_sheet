@@ -307,11 +307,18 @@
 .relationship-line > *:first-child a > .img-container {
     position: absolute;
     top : 0;
-    left: 1em;
     bottom: 0;
     width: 2em;
     min-width: auto;
     min-height: auto;
+}
+
+.relationship-line > *:first-child a > .img-container:first-child {
+    left: 1em;
+}
+
+.relationship-line > *:first-child a > .img-container:last-child {
+    right: 2em;
 }
 
 /*	============================================================================================ */
