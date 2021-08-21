@@ -109,12 +109,12 @@
 				
 				"relationships": {
 					"feelings_list": {
-						"01": "https://i51.servimg.com/u/f51/19/07/32/75/21080916.png",
-						"02": "https://i51.servimg.com/u/f51/19/07/32/75/21080916.png",
-						"03": "https://i51.servimg.com/u/f51/19/07/32/75/21080916.png",
-						"04": "https://i51.servimg.com/u/f51/19/07/32/75/21080916.png",
-						"05": "https://i51.servimg.com/u/f51/19/07/32/75/21080916.png",
-						"06": "https://i51.servimg.com/u/f51/19/07/32/75/21080916.png"
+						"01": "love",
+						"02": "like",
+						"03": "neutral",
+						"04": "dislike",
+						"05": "hate",
+						"06": "???"
 					},
 					
 					"lines": [

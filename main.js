@@ -220,7 +220,7 @@ function updateSheetInfo() {
 		
 		var gaugeImg = $("<img>")
 			.addClass("gauge-img")
-			.attr("src", currentSheet.trivia.gauges.background_img)
+			.attr("src", gaugeLine_.img_url)
 			.appendTo(gaugeContainer)
 		;
 		
