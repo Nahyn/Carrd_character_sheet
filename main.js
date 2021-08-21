@@ -150,7 +150,7 @@ function updateSheetInfo() {
 		;
 		
 		var axisContainer = $("<div>")
-			.addClass("col-6")
+			.addClass("col-6 axis-container")
 			.appendTo(rowContainer)
 		;
 		
@@ -160,7 +160,7 @@ function updateSheetInfo() {
 			.appendTo(axisContainer)
 		;
 		
-		var cursorPositionner = $("<img>")
+		var cursorPositionner = $("<div>")
 			.addClass("axis-cursor-positionner")
 			.attr("style", "left: "+ (parseFloat(axisLine_.value.replace(",", ".")) * 100) +"%")
 			.append(
@@ -181,7 +181,7 @@ function updateSheetInfo() {
 		
 		return rowContainer;
 	});
-	$("#" + INFO_ELEMENT_IDS.TRIVIA_GAUGE_CONTAINER).append(axisContainer);
+	$("#" + INFO_ELEMENT_IDS.TRIVIA_AXIS_CONTAINER).append(axisContainer);
 	
 	var gaugesContainer = createListElements(currentSheet.trivia.gauges.lines, function(gaugeLine_){
 		var rowContainer = $("<div>")
@@ -202,21 +202,9 @@ function updateSheetInfo() {
 			.appendTo(rowContainer)
 		;
 		
-		var axisBackground = $("<div>")
-			.addClass("gauge-background")
-			.attr("style", "background-image: url('"+ currentSheet.trivia.gauges.background_img +"')")
-			.appendTo(gaugeContainer)
-		;
-		
-		var cursorPositionner = $("<img>")
-			.addClass("gauge-foreground")
-			.attr(
-				"style", 
-				[
-					"background-image: url('"+ currentSheet.trivia.gauges.foreground_img +"')",
-					"width: "+ (parseFloat(gaugeLine_.value.replace(",", ".")) * 100) +"%"
-				].join(";")
-			)
+		var gaugeImg = $("<img>")
+			.addClass("gauge-img")
+			.attr("src", currentSheet.trivia.gauges.background_img)
 			.appendTo(gaugeContainer)
 		;
 		
