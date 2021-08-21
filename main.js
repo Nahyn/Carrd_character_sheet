@@ -276,8 +276,11 @@ function updateSheetInfo() {
 				.appendTo(headerContent)
 		}
 		tmpFeelingIcon.onload = function(event_) {
-			$(tmpFeelingIcon)
+			$("<div>")
 				.addClass("relation-feeling")
+				.addClass("img-container")
+				.attr("style", "background-image: url('" + feelingsContent + "')")
+				.attr(inElementDataUrl, feelingsContent)
 				.appendTo(headerContent)
 		}
 		tmpFeelingIcon.loadImage()
