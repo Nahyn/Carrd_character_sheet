@@ -304,6 +304,15 @@
     text-align: left;
 }
 
+.relationship-line > *:first-child a > .img-container {
+    position: absolute;
+    top : 0;
+    left: 1em;
+    bottom: 0;
+    width: 2em;
+    min-width: auto;
+    min-height: auto;
+}
 
 /*	============================================================================================ */
 /*	== LORE ==================================================================================== */

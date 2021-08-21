@@ -253,7 +253,11 @@ function updateSheetInfo() {
 		var tmpIcon = loadImg(relationLine_.icon);
 		
 		tmpIcon.onload = function(event_) {
-			$(tmpIcon).prependTo(headerContent)
+			$("<div>")
+				.addClass("img-container")
+				.attr("style", "background-image: url('" + relationLine_.icon+ "')")
+				.attr(inElementDataUrl, relationLine_.icon)
+				.prependTo(headerContent)
 		}
 		tmpIcon.loadImage()
 		
@@ -608,6 +612,9 @@ var hideImgModal = function(){
 
 window.addEventListener("load", function(){
 	$("body").on("click", ".img-container:not(.img-modal)", function(event_){
+		event_.preventDefault();
+		event_.stopPropagation();
+		
 		var currentTarget = $(event_.currentTarget);
 		var imgUrl = currentTarget.attr(inElementDataUrl);
 		
