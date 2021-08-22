@@ -390,11 +390,12 @@
 				"relationships": {
 					"feelings_list": {
 						"01": "https://i51.servimg.com/u/f51/19/07/32/75/21081510.png",
-						"02": "like",
-						"03": "neutral",
-						"04": "dislike",
-						"05": "hate",
-						"06": "???"
+						"02": "https://i51.servimg.com/u/f51/19/07/32/75/21081511.png",
+						"03": "https://i51.servimg.com/u/f51/19/07/32/75/21081512.png",
+						"04": "https://i51.servimg.com/u/f51/19/07/32/75/21081514.png",
+						"05": "https://i51.servimg.com/u/f51/19/07/32/75/21081516.png",
+						"06": "https://i51.servimg.com/u/f51/19/07/32/75/21081515.png",
+						"07": "https://i51.servimg.com/u/f51/19/07/32/75/21081513.png"
 					},
 					
 					"lines": [
