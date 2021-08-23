@@ -5,7 +5,7 @@
 			
 			"info": [
 				{
-					"label": "nom",
+					"label": "name",
 					"value": "Morgan"
 				},
 				{
@@ -25,7 +25,7 @@
 					"value": "182"
 				},
 				{
-					"label": "Status",
+					"label": "status",
 					"value": "Alive"
 				}
 			],
@@ -87,22 +87,10 @@
 				},
 				
 				"gauges": {
-					"background_img": "https://i51.servimg.com/u/f51/19/07/32/75/21080913.png",
-					"foreground_img": "https://i51.servimg.com/u/f51/19/07/32/75/21080910.png",
-					
 					"lines": [
 						{
 							"label": "curious",
-							"value": "0,7"
-						},
-						
-						{
-							"label": "introverted",
-							"value": "0,5"
-						},
-						{
-							"label": "assertive",
-							"value": "0,8"
+							"img_url": "https://i.servimg.com/u/f51/19/07/32/75/21080918.png"
 						}
 					]
 				},
