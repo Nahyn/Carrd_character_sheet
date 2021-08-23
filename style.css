@@ -90,7 +90,7 @@
 	display: flex;
 	width: 100%;
 	overflow: hidden;
-	border: 1px solid rgba(0, 0, 0, 0.2);
+	border: none;
 	border-radius: 0.25em;
 	background: white;
 	line-height: 2em;
