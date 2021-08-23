@@ -120,6 +120,10 @@
 	display: flex;
 	justify-content: space-evenly;
 	border: none;
+	box-shadow:  4px 4px 6px 0 rgba(116, 125, 136, .2),
+              -4px -4px 6px 0 rgba(255,255,255,.5), 
+    inset -4px -4px 6px 0 rgba(116, 125, 136, .2),
+    inset 4px 4px 6px 0 rgba(255,255,255,.5);
 }
 
 .nav.nav-tabs > * {
@@ -131,7 +135,6 @@
 	font-weight: bold;
 	border-radius: 0;
 	background: transparent;
-	
 }
 
 .nav.nav-tabs > *:not(.active):hover {
@@ -148,10 +151,6 @@
 	cursor: default;
 	background: transparent;
 	border: none
-	box-shadow:  4px 4px 6px 0 rgba(116, 125, 136, .2),
-              -4px -4px 6px 0 rgba(255,255,255,.5), 
-    inset -4px -4px 6px 0 rgba(116, 125, 136, .2),
-    inset 4px 4px 6px 0 rgba(255,255,255,.5);
 }
 
 #tab-content-container > * {
