@@ -176,25 +176,25 @@
 					
 					"lines": [
 						{
-							"left_label": "little spoon",
-							"right_label": "big spoon",
-							"value": "0,8"
-						},
-						{
-							"left_label": "screams about the bugs",
-							"right_label": "squashes them",
-							"value": "0,1"
-						},
-						
-						{
-							"left_label": "lends clothes",
-							"right_label": "borrows clothes",
+							"left_label": "extraverted",
+							"right_label": "introverted",
 							"value": "0,7"
 						},
 						{
-							"left_label": "affection through words",
-							"right_label": "affection through actions",
+							"left_label": "intuitive",
+							"right_label": "observant",
 							"value": "0,6"
+						},
+						
+						{
+							"left_label": "thinking",
+							"right_label": "feeling",
+							"value": "0,6"
+						},
+						{
+							"left_label": "judging",
+							"right_label": "prospecting",
+							"value": "0,5"
 						},
 						{
 							"left_label": "dislikes PDA",
