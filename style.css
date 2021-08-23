@@ -31,11 +31,18 @@
 	text-transform: uppercase;
 	margin-bottom: 1em;
 	font-family: "Special+Elite";
+	text-align: center;
 
 	-moz-appearance: auto;
 	-webkit-appearance: auto;
 	-ms-appearance: auto;
 	appearance: auto;
+}
+
+
+#main > .inner > select optgroup,
+#main > .inner > select option {
+	font-family: "Special+Elite", sans-serif;
 }
 
 #main > .inner > *:last-child:not(select) {
