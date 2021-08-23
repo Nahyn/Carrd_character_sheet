@@ -188,7 +188,7 @@
 	width: 100%;
 	max-width: 100%;
 	white-space: nowrap;
-	overflow: hidden;
+	overflow: visible;
 	text-overflow: ellipsis;
 	text-align: left;
 }
