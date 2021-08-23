@@ -141,7 +141,7 @@
 
 .nav.nav-tabs > *:not(.active):hover {
 	cursor: pointer;
-	background: rgba(0, 0, 0, 0.05);
+	background: rgba(0, 0, 0, 0.0);
 	border: none;
 }
 
