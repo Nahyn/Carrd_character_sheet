@@ -128,7 +128,7 @@
 			
 			"info": [
 				{
-					"label": "nom",
+					"label": "name",
 					"value": "Maxim Sadovsky"
 				},
 				
@@ -149,8 +149,8 @@
 					"value": "173"
 				},
 				{
-					"label": "Status",
-					"value": "Alive"
+					"label": "status",
+					"value": "alive"
 				}
 			],
 			
@@ -417,8 +417,12 @@
 			
 			"info": [
 				{
-					"label": "nom",
+					"label": "name",
 					"value": "Luka"
+				},
+				{
+					"label": "surname",
+					"value": "unknown"
 				},
 				
 				{
@@ -432,15 +436,15 @@
 				
 				{
 					"label": "age",
-					"value": "Unknown"
+					"value": "unknown"
 				},
 				{
 					"label": "height",
-					"value": "Unknown"
+					"value": "unknown"
 				},
 				{
 					"label": "Status",
-					"value": "Unknown"
+					"value": "unknown"
 				}
 			],
 			
