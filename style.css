@@ -24,8 +24,9 @@
 
 #main > .inner > select {
 	flex: 0 0 auto;
-	height: 3em;
-	padding: 0.3em;
+	height: 2em;
+	padding: 0.2em;
+	align: center;
 	width: 100%;
 	border: 1px dashed rgba(0, 0, 0, 0.3);
 	text-transform: uppercase;
