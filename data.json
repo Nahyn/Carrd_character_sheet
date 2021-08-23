@@ -262,8 +262,12 @@
 			
 			"info": [
 				{
-					"label": "nom",
-					"value": "Youri Koniev"
+					"label": "name",
+					"value": "Youri"
+				},
+								{
+					"label": "surname",
+					"value": "Koniev"
 				},
 				{
 					"label": "gender",
@@ -283,7 +287,7 @@
 				},
 				{
 					"label": "Status",
-					"value": "Alive"
+					"value": "alive"
 				}
 			],
 			
@@ -571,10 +575,13 @@
 			
 			"info": [
 				{
-					"label": "nom",
+					"label": "name",
 					"value": "Nona"
 				},
-				
+				{
+					"label": "surname",
+					"value": "Egorova"
+				},				
 				{
 					"label": "gender",
 					"value": "female"
@@ -583,7 +590,6 @@
 					"label": "species",
 					"value": "vampire"
 				},
-				
 				{
 					"label": "age",
 					"value": "36"
@@ -594,7 +600,7 @@
 				},
 				{
 					"label": "Status",
-					"value": "Alive"
+					"value": "alive"
 				}
 			],
 			
