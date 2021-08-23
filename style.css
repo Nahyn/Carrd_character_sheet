@@ -24,13 +24,13 @@
 
 #main > .inner > select {
 	flex: 0 0 auto;
-	height: 2em;
-	padding: 0.2em;
+	height: 3em;
+	padding: 0.3em;
 	width: 100%;
 	border: 1px dashed rgba(0, 0, 0, 0.3);
 	text-transform: uppercase;
 	margin-bottom: 1em;
-	font-family: "Staatliches";
+	font-family: "Special+Elite";
 
 	-moz-appearance: auto;
 	-webkit-appearance: auto;
