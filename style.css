@@ -124,6 +124,7 @@
 	display: flex;
 	justify-content: space-evenly;
 	border: none;
+	border-radius: 20px;
 	box-shadow:
    -7px -7px 20px 0px #fff9,
    -4px -4px 5px 0px #fff9,
@@ -139,7 +140,7 @@
 	color: rgb(151, 151, 151);
 	border: none;
 	font-weight: bold;
-	border-radius: 20px;
+	border-radius: 0;
 	background: transparent;
 }
 
