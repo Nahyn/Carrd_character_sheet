@@ -194,12 +194,12 @@
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 }
 
 .axis-cursor-positionner img {
 	flex: 0 0 auto;
 	max-height: auto;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 }
 
 .axis-line span {
