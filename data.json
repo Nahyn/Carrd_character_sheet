@@ -684,27 +684,6 @@
 					]
 				},
 				
-				"gauges": {
-					"background_img": "https://i51.servimg.com/u/f51/19/07/32/75/21080913.png",
-					"foreground_img": "https://i51.servimg.com/u/f51/19/07/32/75/21080910.png",
-					
-					"lines": [
-						{
-							"label": "curious",
-							"value": "0,5"
-						},
-						
-						{
-							"label": "introverted",
-							"value": "0,5"
-						},
-						{
-							"label": "assertive",
-							"value": "0,5"
-						}
-					]
-				},
-				
 				"relationships": {
 					"feelings_list": {
 						"01": "https://i51.servimg.com/u/f51/19/07/32/75/21081510.png",
