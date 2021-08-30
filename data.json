@@ -663,6 +663,26 @@
 						}
 					]
 				},
+				"gauges": {
+					"background_img": "https://i51.servimg.com/u/f51/19/07/32/75/21080913.png",
+					"foreground_img": "https://i51.servimg.com/u/f51/19/07/32/75/21080910.png",
+					
+					"lines": [
+						{
+							"label": "<name>",
+							"value": "0,5"
+						},
+						
+						{
+							"label": "<name>",
+							"value": "0,5"
+						},
+						{
+							"label": "<name>",
+							"value": "0,5"
+						}
+					]
+				},
 				
 				"relationships": {
 					"feelings_list": {
