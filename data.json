@@ -9,10 +9,6 @@
 					"value": "Morgan"
 				},
 				{
-					"label": "surname",
-					"value": "???"
-				},
-				{
 					"label": "gender",
 					"value": "male"
 				},
@@ -134,11 +130,7 @@
 			"info": [
 				{
 					"label": "name",
-					"value": "Maxim"
-				},
-				{
-					"label": "surname",
-					"value": "Sadovsky"
+					"value": "Maxim Sadovsky"
 				},
 				{
 					"label": "gender",
@@ -272,11 +264,7 @@
 			"info": [
 				{
 					"label": "name",
-					"value": "Youri"
-				},
-				{
-					"label": "surname",
-					"value": "Koniev"
+					"value": "Youri Koniev"
 				},
 				{
 					"label": "gender",
@@ -433,10 +421,6 @@
 					"label": "name",
 					"value": "Luka"
 				},
-				{
-					"label": "surname",
-					"value": "unknown"
-				},
 				
 				{
 					"label": "gender",
@@ -575,11 +559,7 @@
 			"info": [
 				{
 					"label": "name",
-					"value": "Nona"
-				},
-				{
-					"label": "surname",
-					"value": "Egorova"
+					"value": "Nona Egorova"
 				},				
 				{
 					"label": "gender",
