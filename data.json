@@ -626,39 +626,59 @@
 							"value": "0,5"
 						},
 						{
-							"left_label": "screams about the bugs",
-							"right_label": "squashes them",
+							"left_label": "asocial",
+							"right_label": "social",
 							"value": "0,5"
 						},
 						
 						{
-							"left_label": "lends clothes",
-							"right_label": "borrows clothes",
+							"left_label": "chill going",
+							"right_label": "overprotective",
 							"value": "0,5"
 						},
 						{
-							"left_label": "affection through words",
-							"right_label": "affection through actions",
+							"left_label": "caring",
+							"right_label": "aloof",
 							"value": "0,5"
 						},
 						{
-							"left_label": "dislikes PDA",
-							"right_label": "loves PDA",
+							"left_label": "sharp",
+							"right_label": "airheaded",
 							"value": "0,5"
 						},
 						{
-							"left_label": "overprotective",
-							"right_label": "chill going",
+							"left_label": "courageous",
+							"right_label": "wimpy",
 							"value": "0,5"
 						},
 						{
-							"left_label": "doesn't use pet names",
-							"right_label": "use pet names",
+							"left_label": "intuitive",
+							"right_label": "observant",
 							"value": "0,8"
 						},
 						{
-							"left_label": "what's a car",
-							"right_label": "drives the car",
+							"left_label": "modest",
+							"right_label": "excessive",
+							"value": "0,5"
+						},
+						{
+							"left_label": "outspoken",
+							"right_label": "reserved",
+							"value": "0,5"
+						},
+						{
+							"left_label": "wise",
+							"right_label": "witless",
+							"value": "0,5"
+						},
+						{
+							"left_label": "extraverted",
+							"right_label": "introverted",
+							"value": "0,5"
+						},
+						{
+							"left_label": "judging",
+							"right_label": "prospecting",
 							"value": "0,5"
 						}
 					]
