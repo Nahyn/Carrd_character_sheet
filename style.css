@@ -4,10 +4,15 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
-	border: 1px solid rgba(0, 0, 0, 0.2);
-	background: rgba(255, 255,255, 0.5);
+	border: 1px solid rgba(0, 0, 0, 0.0);
+	background: rgba(235, 235,235, 0.5);
+	font-family: "Urbanist", "Comfortaa", sans-serif;
 	border-radius: 1em;
-	box-shadow: 0px 0px 4px 0px rgb(0 0 0 / 10%);
+	box-shadow:
+   -7px -7px 20px 0px #fff9,
+   -4px -4px 5px 0px #fff9,
+   7px 7px 20px 0px #fff9,
+   4px 4px 5px 0px #0005;
 }
 
 #main > .inner > * {
@@ -29,12 +34,19 @@
 	border: 1px dashed rgba(0, 0, 0, 0.3);
 	text-transform: uppercase;
 	margin-bottom: 1em;
-	font-weight: bold;
+	font-family: "Special+Elite";
+	text-align: center;
 
 	-moz-appearance: auto;
 	-webkit-appearance: auto;
 	-ms-appearance: auto;
 	appearance: auto;
+}
+
+
+#main > .inner > select optgroup,
+#main > .inner > select option {
+	font-family: "Special+Elite", sans-serif;
 }
 
 #main > .inner > *:last-child:not(select) {
@@ -74,7 +86,7 @@
 #info_line_container {
 	display: flex;
 	flex-direction: column;
-	max-height: 40vh;
+	max-height: 45vh;
 	overflow: auto;
 }
 
@@ -82,11 +94,11 @@
 	display: flex;
 	width: 100%;
 	overflow: hidden;
-	border: 1px solid rgba(0, 0, 0, 0.2);
+	border: none;
 	border-radius: 0.25em;
 	background: white;
 	line-height: 2em;
-	font-family: "Comic Sans MS";
+	font-family: "Urbanist";
 	margin: 0.2em 0;
 }
 
@@ -112,30 +124,37 @@
 	display: flex;
 	justify-content: space-evenly;
 	border: none;
+	border-radius: 20px;
+	box-shadow:
+   -7px -7px 20px 0px #fff9,
+   -4px -4px 5px 0px #fff9,
+   7px 7px 20px 0px #fff9,
+   4px 4px 5px 0px #0005;
+   
 }
 
 .nav.nav-tabs > * {
 	flex: 1 1 5em;
 	margin-left: 0.25em;
 	margin-right: 0.25em;
-	color: rgb(60, 60, 60);
+	color: rgb(151, 151, 151);
 	border: none;
 	font-weight: bold;
 	border-radius: 0;
 	background: transparent;
-	border: 1px solid transparent;
 }
 
 .nav.nav-tabs > *:not(.active):hover {
 	cursor: pointer;
-	background: rgba(0, 0, 0, 0.05);
-	border: 1px solid transparent;
+	background: rgba(0, 0, 0, 0.0);
+	border: none;
 }
 
 .nav.nav-tabs > .active {
 	cursor: default;
 	background: transparent;
-	border: 1px solid rgba(0, 0, 0, 0.2);
+	border: none	
+	box-shadow: 7px 7px 20px 0px rgba(0,0,0,.2);
 }
 
 #tab-content-container > * {
